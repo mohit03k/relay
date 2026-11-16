@@ -1,0 +1,1553 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-11-16T16:36:55.945Z",
+  "comp": ".impeccable/mocks/03-table-led.png",
+  "warnings": [],
+  "uncoveredInkCells": [
+    "B0",
+    "B1",
+    "C1",
+    "F1",
+    "G1",
+    "H1",
+    "I1",
+    "J1",
+    "H5",
+    "J5",
+    "I9"
+  ],
+  "compSize": {
+    "width": 1487,
+    "height": 1058
+  },
+  "aspect": 1.4055,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#f6f6f7",
+      "coverage": 0.7936
+    },
+    {
+      "hex": "#082798",
+      "coverage": 0.1435
+    },
+    {
+      "hex": "#c2e935",
+      "coverage": 0.03
+    },
+    {
+      "hex": "#0f0f13",
+      "coverage": 0.0195
+    },
+    {
+      "hex": "#b0b0b3",
+      "coverage": 0.0134
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.022,
+      "strength": 0.4155
+    },
+    {
+      "y": 0.0549,
+      "strength": 0.3317
+    },
+    {
+      "y": 0.1099,
+      "strength": 0.4429
+    },
+    {
+      "y": 0.1319,
+      "strength": 0.4293
+    },
+    {
+      "y": 0.1538,
+      "strength": 0.615
+    },
+    {
+      "y": 0.2418,
+      "strength": 0.282
+    },
+    {
+      "y": 0.2637,
+      "strength": 0.2586
+    },
+    {
+      "y": 0.2857,
+      "strength": 0.3535
+    },
+    {
+      "y": 0.3187,
+      "strength": 0.3459
+    },
+    {
+      "y": 0.3407,
+      "strength": 0.2398
+    },
+    {
+      "y": 0.3626,
+      "strength": 0.8037
+    },
+    {
+      "y": 0.4066,
+      "strength": 0.3524
+    },
+    {
+      "y": 0.4286,
+      "strength": 0.3013
+    },
+    {
+      "y": 0.4615,
+      "strength": 0.4997
+    },
+    {
+      "y": 0.5055,
+      "strength": 0.2647
+    },
+    {
+      "y": 0.5275,
+      "strength": 0.2037
+    },
+    {
+      "y": 0.5495,
+      "strength": 0.3491
+    },
+    {
+      "y": 0.5934,
+      "strength": 0.3888
+    },
+    {
+      "y": 0.6154,
+      "strength": 0.2504
+    },
+    {
+      "y": 0.6374,
+      "strength": 0.2464
+    },
+    {
+      "y": 0.6593,
+      "strength": 0.2081
+    },
+    {
+      "y": 0.6813,
+      "strength": 0.321
+    },
+    {
+      "y": 0.7143,
+      "strength": 0.2273
+    },
+    {
+      "y": 0.7802,
+      "strength": 0.4413
+    },
+    {
+      "y": 0.8022,
+      "strength": 0.2095
+    },
+    {
+      "y": 0.8462,
+      "strength": 0.4558
+    },
+    {
+      "y": 0.8901,
+      "strength": 0.3517
+    }
+  ],
+  "regions": [
+    {
+      "id": "sidebar-top",
+      "kind": "chrome",
+      "note": "solid blue navigation rail with brand and queue controls",
+      "grid": null,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 0.1412,
+        "h": 0.5019
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 210,
+        "h": 531
+      },
+      "aspect": 0.3955,
+      "palette": [
+        {
+          "hex": "#082797",
+          "coverage": 0.8715
+        },
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.1003
+        },
+        {
+          "hex": "#4c67b7",
+          "coverage": 0.0099
+        },
+        {
+          "hex": "#cdd6ee",
+          "coverage": 0.0098
+        },
+        {
+          "hex": "#a0acd8",
+          "coverage": 0.0085
+        }
+      ],
+      "detail": {
+        "energy": 18.2195
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "sidebar-bottom",
+      "kind": "chrome",
+      "note": "continuation of solid blue navigation rail with Settings control",
+      "grid": null,
+      "box": {
+        "x": 0,
+        "y": 0.5019,
+        "w": 0.1412,
+        "h": 0.4981
+      },
+      "px": {
+        "x": 0,
+        "y": 531,
+        "w": 210,
+        "h": 527
+      },
+      "aspect": 0.3985,
+      "palette": [
+        {
+          "hex": "#082697",
+          "coverage": 0.9975
+        },
+        {
+          "hex": "#f3f3f8",
+          "coverage": 0.0025
+        }
+      ],
+      "detail": {
+        "energy": 2.2251
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "page-heading",
+      "kind": "text",
+      "note": "bold Demo inbox heading",
+      "grid": null,
+      "box": {
+        "x": 0.1513,
+        "y": 0.0123,
+        "w": 0.2589,
+        "h": 0.0425
+      },
+      "px": {
+        "x": 225,
+        "y": 13,
+        "w": 385,
+        "h": 45
+      },
+      "aspect": 8.5556,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8284
+        },
+        {
+          "hex": "#0b0b10",
+          "coverage": 0.1158
+        },
+        {
+          "hex": "#4a4b56",
+          "coverage": 0.0214
+        },
+        {
+          "hex": "#b4b4bc",
+          "coverage": 0.0198
+        },
+        {
+          "hex": "#76777d",
+          "coverage": 0.0146
+        }
+      ],
+      "detail": {
+        "energy": 48.5731
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 28.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6978,
+          "advTall": 0.6978,
+          "advX": 0.7152,
+          "gap": 0.0872,
+          "xRatio": 0.7073,
+          "stemW": 0.2222,
+          "contrast": 1.2206,
+          "serif": 0.2437,
+          "densTall": 0.629,
+          "densX": 0.6478,
+          "weight": 0.629
+        },
+        "widthClass": "normal",
+        "weightClass": "bold",
+        "chosen": {
+          "family": "Atkinson Hyperlegible",
+          "weight": 700,
+          "fontSizePx": 41,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "b0203b654753"
+        }
+      }
+    },
+    {
+      "id": "page-subtitle",
+      "kind": "text",
+      "note": "assistant email context and demo no live sync disclosure",
+      "grid": null,
+      "box": {
+        "x": 0.152,
+        "y": 0.051,
+        "w": 0.3484,
+        "h": 0.0246
+      },
+      "px": {
+        "x": 226,
+        "y": 54,
+        "w": 518,
+        "h": 26
+      },
+      "aspect": 19.9231,
+      "palette": [
+        {
+          "hex": "#f6f6f6",
+          "coverage": 0.824
+        },
+        {
+          "hex": "#7f7f89",
+          "coverage": 0.0841
+        },
+        {
+          "hex": "#4c4c5a",
+          "coverage": 0.0539
+        },
+        {
+          "hex": "#b7b7bd",
+          "coverage": 0.0379
+        }
+      ],
+      "detail": {
+        "energy": 53.5034
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 48,
+          "capHeightPx": 13.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5898,
+          "advTall": 0.1843,
+          "advX": 0.5898,
+          "gap": 0.1106,
+          "xRatio": 0.7226,
+          "stemW": 0.1783,
+          "contrast": 1.1135,
+          "serif": 0.4506,
+          "densTall": 0.721,
+          "densX": 0.6011,
+          "weight": 0.721
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "filters",
+      "kind": "control",
+      "note": "search and three filters in bordered fields",
+      "grid": null,
+      "box": {
+        "x": 0.1513,
+        "y": 0.103,
+        "w": 0.5205,
+        "h": 0.0416
+      },
+      "px": {
+        "x": 225,
+        "y": 109,
+        "w": 774,
+        "h": 44
+      },
+      "aspect": 17.5909,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8519
+        },
+        {
+          "hex": "#c6c6cc",
+          "coverage": 0.0927
+        },
+        {
+          "hex": "#121213",
+          "coverage": 0.0232
+        },
+        {
+          "hex": "#585863",
+          "coverage": 0.0175
+        },
+        {
+          "hex": "#89878d",
+          "coverage": 0.0146
+        }
+      ],
+      "detail": {
+        "energy": 34.2376
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "list-meta",
+      "kind": "text",
+      "note": "25 conversations count",
+      "grid": null,
+      "box": {
+        "x": 0.1513,
+        "y": 0.1682,
+        "w": 0.117,
+        "h": 0.0246
+      },
+      "px": {
+        "x": 225,
+        "y": 178,
+        "w": 174,
+        "h": 26
+      },
+      "aspect": 6.6923,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8352
+        },
+        {
+          "hex": "#6f6f7a",
+          "coverage": 0.0709
+        },
+        {
+          "hex": "#3b3c48",
+          "coverage": 0.0517
+        },
+        {
+          "hex": "#afb1b6",
+          "coverage": 0.0421
+        }
+      ],
+      "detail": {
+        "energy": 33.5484
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 14,
+          "capHeightPx": 12.4,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6464,
+          "advTall": 0.5387,
+          "advX": 0.6464,
+          "gap": 0.0808,
+          "xRatio": 0.772,
+          "stemW": 0.1853,
+          "contrast": 1.0719,
+          "serif": 0.3161,
+          "densTall": 0.5345,
+          "densX": 0.5882,
+          "weight": 0.5345
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "sort",
+      "kind": "control",
+      "note": "Most recent sort control",
+      "grid": null,
+      "box": {
+        "x": 0.5696,
+        "y": 0.1682,
+        "w": 0.1049,
+        "h": 0.0255
+      },
+      "px": {
+        "x": 847,
+        "y": 178,
+        "w": 156,
+        "h": 27
+      },
+      "aspect": 5.7778,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8074
+        },
+        {
+          "hex": "#101114",
+          "coverage": 0.0563
+        },
+        {
+          "hex": "#5f6067",
+          "coverage": 0.0541
+        },
+        {
+          "hex": "#c7c7c7",
+          "coverage": 0.0433
+        },
+        {
+          "hex": "#8f919a",
+          "coverage": 0.039
+        }
+      ],
+      "detail": {
+        "energy": 39.139
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "table-head",
+      "kind": "chrome",
+      "note": "five column table header and square selection control",
+      "grid": null,
+      "box": {
+        "x": 0.1466,
+        "y": 0.2023,
+        "w": 0.534,
+        "h": 0.0529
+      },
+      "px": {
+        "x": 218,
+        "y": 214,
+        "w": 794,
+        "h": 56
+      },
+      "aspect": 14.1786,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9484
+        },
+        {
+          "hex": "#c7c7cc",
+          "coverage": 0.0222
+        },
+        {
+          "hex": "#101010",
+          "coverage": 0.011
+        },
+        {
+          "hex": "#6a6a6d",
+          "coverage": 0.0102
+        },
+        {
+          "hex": "#96969a",
+          "coverage": 0.0082
+        }
+      ],
+      "detail": {
+        "energy": 20.1023
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "selected-row",
+      "kind": "control",
+      "note": "selected Maya Chen row with blue highlight and review badge",
+      "grid": null,
+      "box": {
+        "x": 0.1466,
+        "y": 0.2552,
+        "w": 0.534,
+        "h": 0.051
+      },
+      "px": {
+        "x": 218,
+        "y": 270,
+        "w": 794,
+        "h": 54
+      },
+      "aspect": 14.7037,
+      "palette": [
+        {
+          "hex": "#d8e6f7",
+          "coverage": 0.9049
+        },
+        {
+          "hex": "#c9ef37",
+          "coverage": 0.0487
+        },
+        {
+          "hex": "#0c0d0f",
+          "coverage": 0.0186
+        },
+        {
+          "hex": "#a3aec9",
+          "coverage": 0.0142
+        },
+        {
+          "hex": "#6b7389",
+          "coverage": 0.0137
+        }
+      ],
+      "detail": {
+        "energy": 31.3496
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "table-rows-upper",
+      "kind": "chrome",
+      "note": "upper conversation rows with sender subject client time and responsibility",
+      "grid": null,
+      "box": {
+        "x": 0.1466,
+        "y": 0.3062,
+        "w": 0.534,
+        "h": 0.3043
+      },
+      "px": {
+        "x": 218,
+        "y": 324,
+        "w": 794,
+        "h": 322
+      },
+      "aspect": 2.4658,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9194
+        },
+        {
+          "hex": "#111114",
+          "coverage": 0.0318
+        },
+        {
+          "hex": "#d6e7f4",
+          "coverage": 0.0212
+        },
+        {
+          "hex": "#c5eb33",
+          "coverage": 0.0147
+        },
+        {
+          "hex": "#494a4c",
+          "coverage": 0.0129
+        }
+      ],
+      "detail": {
+        "energy": 31.4825
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "table-rows-lower",
+      "kind": "chrome",
+      "note": "lower conversation rows with sender subject client time and responsibility",
+      "grid": null,
+      "box": {
+        "x": 0.1466,
+        "y": 0.6106,
+        "w": 0.534,
+        "h": 0.31
+      },
+      "px": {
+        "x": 218,
+        "y": 646,
+        "w": 794,
+        "h": 328
+      },
+      "aspect": 2.4207,
+      "palette": [
+        {
+          "hex": "#f5f6f6",
+          "coverage": 0.9344
+        },
+        {
+          "hex": "#111113",
+          "coverage": 0.0247
+        },
+        {
+          "hex": "#b0b0b3",
+          "coverage": 0.0175
+        },
+        {
+          "hex": "#47474d",
+          "coverage": 0.0121
+        },
+        {
+          "hex": "#79797e",
+          "coverage": 0.0112
+        }
+      ],
+      "detail": {
+        "energy": 29.8235
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "review-banner",
+      "kind": "control",
+      "note": "large citron Needs review banner with count and description",
+      "grid": null,
+      "box": {
+        "x": 0.6853,
+        "y": 0.0265,
+        "w": 0.3087,
+        "h": 0.0992
+      },
+      "px": {
+        "x": 1019,
+        "y": 28,
+        "w": 459,
+        "h": 105
+      },
+      "aspect": 4.3714,
+      "palette": [
+        {
+          "hex": "#c2e936",
+          "coverage": 0.8928
+        },
+        {
+          "hex": "#090b0c",
+          "coverage": 0.0686
+        },
+        {
+          "hex": "#435618",
+          "coverage": 0.0152
+        },
+        {
+          "hex": "#202f0d",
+          "coverage": 0.012
+        },
+        {
+          "hex": "#99bb2c",
+          "coverage": 0.0114
+        }
+      ],
+      "detail": {
+        "energy": 32.2427
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "detail-heading",
+      "kind": "text",
+      "note": "Maya Chen Contract signature heading",
+      "grid": null,
+      "box": {
+        "x": 0.6967,
+        "y": 0.1512,
+        "w": 0.2851,
+        "h": 0.0293
+      },
+      "px": {
+        "x": 1036,
+        "y": 160,
+        "w": 424,
+        "h": 31
+      },
+      "aspect": 13.6774,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.7356
+        },
+        {
+          "hex": "#0b0b10",
+          "coverage": 0.1217
+        },
+        {
+          "hex": "#52525b",
+          "coverage": 0.0674
+        },
+        {
+          "hex": "#909096",
+          "coverage": 0.0484
+        },
+        {
+          "hex": "#2c2d33",
+          "coverage": 0.0268
+        }
+      ],
+      "detail": {
+        "energy": 94.1754
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 24,
+          "capHeightPx": 18.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6704,
+          "advTall": 0.7241,
+          "advX": 0.6436,
+          "gap": 0.0805,
+          "xRatio": 0.7387,
+          "stemW": 0.2265,
+          "contrast": 1.2608,
+          "serif": 0.3409,
+          "densTall": 0.5674,
+          "densX": 0.7077,
+          "weight": 0.5674
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "detail-meta",
+      "kind": "text",
+      "note": "client company and time metadata",
+      "grid": null,
+      "box": {
+        "x": 0.6967,
+        "y": 0.1796,
+        "w": 0.2286,
+        "h": 0.0208
+      },
+      "px": {
+        "x": 1036,
+        "y": 190,
+        "w": 340,
+        "h": 22
+      },
+      "aspect": 15.4545,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.864
+        },
+        {
+          "hex": "#cacbcd",
+          "coverage": 0.0625
+        },
+        {
+          "hex": "#a2a2ab",
+          "coverage": 0.0384
+        },
+        {
+          "hex": "#62626f",
+          "coverage": 0.034
+        },
+        {
+          "hex": "#788888",
+          "coverage": 0.0011
+        }
+      ],
+      "detail": {
+        "energy": 42.8828
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 20,
+          "capHeightPx": 11.7,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.6816,
+          "advTall": 0.7668,
+          "advX": null,
+          "gap": 0.1136,
+          "xRatio": null,
+          "stemW": 0.1918,
+          "contrast": 1.0709,
+          "serif": 0.5928,
+          "densTall": 0.5399,
+          "densX": null,
+          "weight": 0.5399
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "suggestion-card",
+      "kind": "control",
+      "note": "bordered Relay suggestion card with client reply decision and rationale",
+      "grid": null,
+      "box": {
+        "x": 0.6967,
+        "y": 0.2136,
+        "w": 0.2905,
+        "h": 0.2023
+      },
+      "px": {
+        "x": 1036,
+        "y": 226,
+        "w": 432,
+        "h": 214
+      },
+      "aspect": 2.0187,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.764
+        },
+        {
+          "hex": "#0828a9",
+          "coverage": 0.1639
+        },
+        {
+          "hex": "#101013",
+          "coverage": 0.0419
+        },
+        {
+          "hex": "#b6b8b9",
+          "coverage": 0.0158
+        },
+        {
+          "hex": "#6c6c70",
+          "coverage": 0.0145
+        }
+      ],
+      "detail": {
+        "energy": 43.6606
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "assign-primary",
+      "kind": "control",
+      "note": "solid blue Assign to client action within suggestion area",
+      "grid": null,
+      "box": {
+        "x": 0.7075,
+        "y": 0.3601,
+        "w": 0.271,
+        "h": 0.0406
+      },
+      "px": {
+        "x": 1052,
+        "y": 381,
+        "w": 403,
+        "h": 43
+      },
+      "aspect": 9.3721,
+      "palette": [
+        {
+          "hex": "#0829ab",
+          "coverage": 0.8049
+        },
+        {
+          "hex": "#d7d9f7",
+          "coverage": 0.076
+        },
+        {
+          "hex": "#546bb6",
+          "coverage": 0.0703
+        },
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.0318
+        },
+        {
+          "hex": "#4860c7",
+          "coverage": 0.0169
+        }
+      ],
+      "detail": {
+        "energy": 30.5491
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "ownership-title",
+      "kind": "text",
+      "note": "Signature move ownership heading",
+      "grid": null,
+      "box": {
+        "x": 0.6994,
+        "y": 0.4329,
+        "w": 0.226,
+        "h": 0.0255
+      },
+      "px": {
+        "x": 1040,
+        "y": 458,
+        "w": 336,
+        "h": 27
+      },
+      "aspect": 12.4444,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.7882
+        },
+        {
+          "hex": "#0d0d12",
+          "coverage": 0.1018
+        },
+        {
+          "hex": "#afb0b7",
+          "coverage": 0.0448
+        },
+        {
+          "hex": "#353640",
+          "coverage": 0.0356
+        },
+        {
+          "hex": "#818088",
+          "coverage": 0.0295
+        }
+      ],
+      "detail": {
+        "energy": 82.2469
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 21,
+          "capHeightPx": 15.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6443,
+          "advTall": 0.2255,
+          "advX": 0.6443,
+          "gap": 0.0966,
+          "xRatio": 0.6404,
+          "stemW": 0.217,
+          "contrast": 1.2482,
+          "serif": 0.953,
+          "densTall": 0.6923,
+          "densX": 0.7106,
+          "weight": 0.6923
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "ownership-route",
+      "kind": "control",
+      "note": "three step ownership route with circular nodes and labels",
+      "grid": null,
+      "box": {
+        "x": 0.7028,
+        "y": 0.4631,
+        "w": 0.2757,
+        "h": 0.0718
+      },
+      "px": {
+        "x": 1045,
+        "y": 490,
+        "w": 410,
+        "h": 76
+      },
+      "aspect": 5.3947,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.898
+        },
+        {
+          "hex": "#646671",
+          "coverage": 0.0483
+        },
+        {
+          "hex": "#9999a0",
+          "coverage": 0.0251
+        },
+        {
+          "hex": "#0927a7",
+          "coverage": 0.0162
+        },
+        {
+          "hex": "#c2c2ca",
+          "coverage": 0.0124
+        }
+      ],
+      "detail": {
+        "energy": 36.44
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "thread-heading",
+      "kind": "text",
+      "note": "Thread heading",
+      "grid": null,
+      "box": {
+        "x": 0.6987,
+        "y": 0.5624,
+        "w": 0.0773,
+        "h": 0.0236
+      },
+      "px": {
+        "x": 1039,
+        "y": 595,
+        "w": 115,
+        "h": 25
+      },
+      "aspect": 4.6,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8689
+        },
+        {
+          "hex": "#0b0c0e",
+          "coverage": 0.0826
+        },
+        {
+          "hex": "#57575b",
+          "coverage": 0.0313
+        },
+        {
+          "hex": "#bcbccc",
+          "coverage": 0.0114
+        },
+        {
+          "hex": "#303040",
+          "coverage": 0.0057
+        }
+      ],
+      "detail": {
+        "energy": 23.0464
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 5,
+          "capHeightPx": 13.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6889,
+          "advTall": 0.6889,
+          "advX": 0.9568,
+          "gap": 0.0957,
+          "xRatio": 0.756,
+          "stemW": 0.2487,
+          "contrast": 1.3007,
+          "serif": 0.3079,
+          "densTall": 0.6319,
+          "densX": 0.6969,
+          "weight": 0.6319
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "thread-count",
+      "kind": "text",
+      "note": "three messages count",
+      "grid": null,
+      "box": {
+        "x": 0.9294,
+        "y": 0.5633,
+        "w": 0.0572,
+        "h": 0.0208
+      },
+      "px": {
+        "x": 1382,
+        "y": 596,
+        "w": 85,
+        "h": 22
+      },
+      "aspect": 3.8636,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.7888
+        },
+        {
+          "hex": "#cccbd0",
+          "coverage": 0.0733
+        },
+        {
+          "hex": "#5d5e69",
+          "coverage": 0.0733
+        },
+        {
+          "hex": "#9e9aa6",
+          "coverage": 0.0603
+        },
+        {
+          "hex": "#483848",
+          "coverage": 0.0043
+        }
+      ],
+      "detail": {
+        "energy": 24.9016
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 11.4,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.646,
+          "advTall": 0.646,
+          "advX": 0.646,
+          "gap": 0.0587,
+          "xRatio": 0.7839,
+          "stemW": 0.2009,
+          "contrast": 1.1381,
+          "serif": null,
+          "densTall": 0.5209,
+          "densX": 0.6305,
+          "weight": 0.5209
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "thread-first",
+      "kind": "chrome",
+      "note": "first message excerpt with avatar sender time and body",
+      "grid": null,
+      "box": {
+        "x": 0.6974,
+        "y": 0.5907,
+        "w": 0.2892,
+        "h": 0.0822
+      },
+      "px": {
+        "x": 1037,
+        "y": 625,
+        "w": 430,
+        "h": 87
+      },
+      "aspect": 4.9425,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.9019
+        },
+        {
+          "hex": "#6f6f74",
+          "coverage": 0.0302
+        },
+        {
+          "hex": "#aeafb0",
+          "coverage": 0.0299
+        },
+        {
+          "hex": "#38383c",
+          "coverage": 0.0195
+        },
+        {
+          "hex": "#0f0f12",
+          "coverage": 0.0185
+        }
+      ],
+      "detail": {
+        "energy": 39.9587
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "thread-second",
+      "kind": "chrome",
+      "note": "second message excerpt with avatar sender time body and attachment",
+      "grid": null,
+      "box": {
+        "x": 0.6974,
+        "y": 0.673,
+        "w": 0.2892,
+        "h": 0.1304
+      },
+      "px": {
+        "x": 1037,
+        "y": 712,
+        "w": 430,
+        "h": 138
+      },
+      "aspect": 3.1159,
+      "palette": [
+        {
+          "hex": "#f6f6f7",
+          "coverage": 0.8944
+        },
+        {
+          "hex": "#c0c1c3",
+          "coverage": 0.0344
+        },
+        {
+          "hex": "#151519",
+          "coverage": 0.0279
+        },
+        {
+          "hex": "#808084",
+          "coverage": 0.027
+        },
+        {
+          "hex": "#46464c",
+          "coverage": 0.0163
+        }
+      ],
+      "detail": {
+        "energy": 37.2287
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "thread-third",
+      "kind": "chrome",
+      "note": "third message excerpt with avatar sender time and body",
+      "grid": null,
+      "box": {
+        "x": 0.6974,
+        "y": 0.8043,
+        "w": 0.2892,
+        "h": 0.0775
+      },
+      "px": {
+        "x": 1037,
+        "y": 851,
+        "w": 430,
+        "h": 82
+      },
+      "aspect": 5.2439,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.9165
+        },
+        {
+          "hex": "#c4c4c7",
+          "coverage": 0.0253
+        },
+        {
+          "hex": "#6f6f76",
+          "coverage": 0.0228
+        },
+        {
+          "hex": "#333337",
+          "coverage": 0.0218
+        },
+        {
+          "hex": "#111015",
+          "coverage": 0.0137
+        }
+      ],
+      "detail": {
+        "energy": 29.8728
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "open-conversation",
+      "kind": "control",
+      "note": "outlined Open full conversation button",
+      "grid": null,
+      "box": {
+        "x": 0.6987,
+        "y": 0.8866,
+        "w": 0.2865,
+        "h": 0.0406
+      },
+      "px": {
+        "x": 1039,
+        "y": 938,
+        "w": 426,
+        "h": 43
+      },
+      "aspect": 9.907,
+      "palette": [
+        {
+          "hex": "#f5f5f5",
+          "coverage": 0.8886
+        },
+        {
+          "hex": "#c8cbd2",
+          "coverage": 0.069
+        },
+        {
+          "hex": "#0d0d11",
+          "coverage": 0.0238
+        },
+        {
+          "hex": "#313137",
+          "coverage": 0.0095
+        },
+        {
+          "hex": "#5f5f64",
+          "coverage": 0.009
+        }
+      ],
+      "detail": {
+        "energy": 32.7354
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    }
+  ],
+  "compSha256": "9409c268a0c8bbf3dedda3a68c2b8be0d47b12f844414ab57b1ddbb5f9f8bb62",
+  "regionsSource": {
+    "path": "/tmp/relay-regions-03.json",
+    "sha256": "119a466223d4ed222582cd3d2684912ba635222033ecbc7cda483eb11ba969a9"
+  }
+}

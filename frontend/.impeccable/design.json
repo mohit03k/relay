@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-16T10:30:58Z",
+  "title": "Design System: Relay",
+  "extensions": {
+    "colorMeta": {
+      "navigation-deep": { "role": "primary", "displayName": "Deep Navigation Blue", "tonalRamp": ["#10182f", "#172348", "#202f60", "#344777", "#65749a", "#9ca8c2", "#d3d9e5", "#f0f2f6"] },
+      "navigation-blue": { "role": "primary", "displayName": "Action Blue", "tonalRamp": ["#111a35", "#1b2b56", "#294078", "#425787", "#6b7ca4", "#a2acc5", "#d3d9e6", "#f0f2f7"] },
+      "navigation-hover": { "role": "primary", "displayName": "Hover Blue", "tonalRamp": ["#141d36", "#253355", "#344777", "#52658d", "#7e8da9", "#b0b9ca", "#d9dee7", "#f2f3f7"] },
+      "navigation-active": { "role": "neutral", "displayName": "Blue Mist", "tonalRamp": ["#1d263a", "#34425b", "#596b88", "#8f9db4", "#bac4d4", "#d6ddea", "#e8ecf4", "#f8f9fb"] },
+      "review-citron": { "role": "secondary", "displayName": "Soft Citron", "tonalRamp": ["#273011", "#495523", "#718036", "#9cae51", "#c4d375", "#e0ea92", "#edf3c1", "#f8fae9"] },
+      "review-citron-hover": { "role": "secondary", "displayName": "Deepened Citron", "tonalRamp": ["#27300f", "#485520", "#718033", "#9dae4d", "#c3d26d", "#d1e277", "#eaf1bd", "#f8fae8"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "tonalRamp": ["#0d1322", "#20283a", "#3d4658", "#626b7c", "#8d95a2", "#b8bdc5", "#dfe2e6", "#f5f6f7"] },
+      "muted-ink": { "role": "neutral", "displayName": "Muted Ink", "tonalRamp": ["#172033", "#303b53", "#4d5870", "#68738a", "#9099a9", "#b7bdc9", "#dce0e6", "#f5f6f8"] },
+      "warm-ground": { "role": "neutral", "displayName": "Warm Ground", "tonalRamp": ["#2d2b27", "#4e4b45", "#747067", "#a09a8f", "#c4beb4", "#e5e1d9", "#f2f0ea", "#faf9f6"] },
+      "white": { "role": "neutral", "displayName": "White", "tonalRamp": ["#252525", "#454545", "#6b6b6b", "#939393", "#bababa", "#dddddd", "#f0f0f0", "#ffffff"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "tonalRamp": ["#292b2a", "#4a4c4b", "#737574", "#9a9c9b", "#bfc1bf", "#dedfdc", "#ebedea", "#f8f9f6"] },
+      "control-border": { "role": "neutral", "displayName": "Control Border", "tonalRamp": ["#222b38", "#3a4758", "#5b6b7f", "#8090a3", "#aeb8c8", "#c9d0da", "#e1e5eb", "#f6f7f9"] },
+      "suggestion-surface": { "role": "neutral", "displayName": "Suggestion Surface", "tonalRamp": ["#1c2436", "#35415a", "#5d6b86", "#929fb8", "#bdc6d6", "#d8deea", "#eaedf4", "#f8f9fb"] },
+      "focus": { "role": "primary", "displayName": "Focus Blue", "tonalRamp": ["#15244a", "#253d75", "#3d5fa8", "#6085dd", "#83a7ff", "#adc4ff", "#d5e0ff", "#f1f5ff"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Top level workspace heading." },
+      "headline": { "displayName": "Headline", "purpose": "Selected item and major panel heading." },
+      "title": { "displayName": "Title", "purpose": "Decision or recommendation inside a card." },
+      "body": { "displayName": "Body", "purpose": "Messages and explanatory copy." },
+      "label": { "displayName": "Label", "purpose": "Controls, table headings, and metadata." }
+    },
+    "shadows": [
+      { "name": "mobile-drawer", "value": "8px 0 24px #06113538", "purpose": "Separate the open navigation drawer from the workspace." },
+      { "name": "dialog", "value": "0 15px 42px #06134745", "purpose": "Lift the authentication dialog over the scrim." }
+    ],
+    "motion": [
+      { "name": "drawer-open", "value": "transform .22s ease-out", "purpose": "Slide in mobile navigation; reduce to near-zero duration for reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1280px" },
+      { "name": "icon-rail", "value": "1000px" },
+      { "name": "mobile", "value": "700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main assignment or submit action.",
+      "html": "<button class=\"ds-primary-button\">Assign to client</button>",
+      "css": ".ds-primary-button{min-height:34px;padding:6px 14px;border:1px solid var(--blue);border-radius:6px;background:var(--blue);color:#fff;font:700 13px 'Atkinson Hyperlegible Next',Arial,sans-serif;text-align:left;cursor:pointer}.ds-primary-button:hover{background:#1b3065}.ds-primary-button:focus-visible{outline:3px solid #83a7ff;outline-offset:2px}.ds-primary-button:active{background:var(--blue-deep)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A supporting ownership or completion action.",
+      "html": "<button class=\"ds-secondary-button\">Handle as assistant</button>",
+      "css": ".ds-secondary-button{min-height:34px;padding:6px 14px;border:1px solid #aab6ca;border-radius:6px;background:#fff;color:#101724;font:700 13px 'Atkinson Hyperlegible Next',Arial,sans-serif;text-align:left;cursor:pointer}.ds-secondary-button:hover{background:#edf2fc}.ds-secondary-button:focus-visible{outline:3px solid #83a7ff;outline-offset:2px}.ds-secondary-button:active{background:#e8ecf4}"
+    },
+    {
+      "name": "Review Count",
+      "kind": "button",
+      "refersTo": "button-review",
+      "description": "The queue count that directs attention to uncertain ownership.",
+      "html": "<button class=\"ds-review-count\">Needs review · 3</button>",
+      "css": ".ds-review-count{padding:7px 14px;border:0;border-radius:7px;background:var(--signal);color:#0b1119;font:700 24px/1.2 'Atkinson Hyperlegible Next',Arial,sans-serif;letter-spacing:-.025em;cursor:pointer}.ds-review-count:hover{background:#d1e277}.ds-review-count:focus-visible{outline:3px solid #83a7ff;outline-offset:2px}"
+    },
+    {
+      "name": "Navigation Item",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "A queue destination in the deep blue rail.",
+      "html": "<button class=\"ds-nav-item ds-active\"><span>All inbox</span><strong>11</strong></button>",
+      "css": ".ds-nav-item{display:flex;align-items:center;justify-content:space-between;gap:11px;width:190px;min-height:43px;padding:8px 10px;border:0;border-radius:7px;background:transparent;color:#f8fbff;font:600 15px 'Atkinson Hyperlegible Next',Arial,sans-serif;text-align:left;cursor:pointer}.ds-nav-item:hover{background:#344777}.ds-nav-item.ds-active{background:#e8ecf4;color:#1b2e5e}.ds-nav-item.ds-active:hover{background:#f0f2f6}.ds-nav-item:focus-visible{outline:3px solid #83a7ff;outline-offset:2px}"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A compact field for forms and filters.",
+      "html": "<input class=\"ds-field\" aria-label=\"Email\" placeholder=\"Email\" />",
+      "css": ".ds-field{width:240px;height:38px;padding:8px 10px;border:1px solid #a7b2c6;border-radius:6px;background:#fff;color:var(--ink);font:400 13px 'Atkinson Hyperlegible Next',Arial,sans-serif}.ds-field:hover{border-color:#8090a3}.ds-field:focus-visible{outline:3px solid #83a7ff;outline-offset:2px}"
+    },
+    {
+      "name": "Responsibility Badge",
+      "kind": "chip",
+      "refersTo": "responsibility-review",
+      "description": "A labelled owner state; citron denotes review.",
+      "html": "<span class=\"ds-responsibility-badge\">Needs review</span>",
+      "css": ".ds-responsibility-badge{display:inline-block;padding:5px 8px;border-radius:6px;background:var(--signal);color:#19220a;font:700 11px 'Atkinson Hyperlegible Next',Arial,sans-serif;white-space:nowrap}"
+    },
+    {
+      "name": "Suggestion Card",
+      "kind": "card",
+      "refersTo": "suggestion-card",
+      "description": "A calm explanation of the suggested owner and its reason.",
+      "html": "<div class=\"ds-suggestion-card\"><strong>Client should reply</strong><p><b>Reason:</b> This decision belongs to the client.</p></div>",
+      "css": ".ds-suggestion-card{min-height:105px;padding:12px 14px;border-radius:6px;background:#eaedf4;color:var(--ink);font-family:'Atkinson Hyperlegible Next',Arial,sans-serif}.ds-suggestion-card strong{display:block;font-size:18px;line-height:1.15}.ds-suggestion-card p{margin:4px 0 0;font-size:15px;line-height:1.3}"
+    },
+    {
+      "name": "Conversation Row",
+      "kind": "custom",
+      "description": "A compact, scannable record with selected and hover states.",
+      "html": "<button class=\"ds-conversation-row ds-selected\"><span><strong>Maya Chen</strong><small>Contract signature needed</small></span><span class=\"ds-row-badge\">Needs review</span></button>",
+      "css": ".ds-conversation-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:380px;min-height:71px;padding:8px 14px;border:0;border-bottom:1px solid #dedfdc;border-radius:0;background:#fff;color:var(--ink);font:400 13px 'Atkinson Hyperlegible Next',Arial,sans-serif;text-align:left;cursor:pointer}.ds-conversation-row strong,.ds-conversation-row small{display:block}.ds-conversation-row strong{font-weight:700}.ds-conversation-row small{margin-top:3px;font-size:12px}.ds-conversation-row:hover{background:#f0f2f5}.ds-conversation-row.ds-selected{background:#e8ecf4}.ds-conversation-row:focus-visible{outline:3px solid #83a7ff;outline-offset:2px}.ds-row-badge{padding:5px 8px;border-radius:6px;background:var(--signal);font-size:11px;font-weight:700;white-space:nowrap}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Handoff Desk",
+    "overview": "Relay feels like a calm, dependable desk for decisions about client email. Its civic wayfinding character comes from a deep blue frame, plainly labelled actions, aligned records, and a visible route from suggestion to ownership. The approved revision makes the working area warmer and the blue quieter than the initial comp.\n\nThe interface is compact and information rich without ornamental noise. Warm off-white separates the working ground from white records and detail surfaces. Citron appears where ownership needs review, so the exception stays easy to find. The navigation frame and action controls carry most of the visual weight.",
+    "keyCharacteristics": [
+      "Deep blue navigation with a warm off-white workspace.",
+      "Compact, highly legible sans typography and orderly rows.",
+      "Soft citron reserved for review and uncertain ownership.",
+      "Thin borders, tonal layers, and almost no resting shadows."
+    ],
+    "rules": [
+      { "name": "The Signal Rule", "body": "Use citron for unresolved review states; use blue for navigation, ownership, and action. Keep the signal rare enough to scan instantly.", "section": "colors" },
+      { "name": "The Scan Rule", "body": "Put the decision bearing phrase in bold, then keep supporting context lighter and smaller. Use tabular numerals for counts and ages.", "section": "typography" },
+      { "name": "The Flat Desk Rule", "body": "Use tonal layers and hairlines for ordinary content; reserve shadow for a surface that actually overlays another.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the deep blue frame and warm working ground as the main visual relationship.",
+      "Do make the next owner and primary action readable before secondary metadata.",
+      "Do use citron for review states and retain text labels alongside color.",
+      "Do preserve visible keyboard focus and the mobile list-to-detail path."
+    ],
+    "donts": [
+      "Don't spread citron into generic success, decorative accents, or ordinary navigation.",
+      "Don't add resting shadows to records or routine cards.",
+      "Don't replace aligned, compact records with ornamental tiles where the assistant needs to compare items."
+    ]
+  }
+}
