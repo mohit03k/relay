@@ -32,7 +32,8 @@ router.post("/simulate", requireRole("assistant"), async (req, res) => {
       conversation.messages.push(nextMessage);
       conversation.set({ ...classification, classificationSource: "ai", classificationModel: CLASSIFICATION_MODEL, classifiedAt: now,
         suggestedResponsibility: classification.replyResponsibility, suggestedReason: classification.responsibilityReason,
-        clientAction: null, clientActionAt: null, isUnread: true, status: "open", lastMessageAt: now });
+        clientAction: null, clientActionAt: null, isUnread: true, status: "open", lastMessageAt: now,
+        followUpResolved: false, draftApproved: false });
       await conversation.save();
       return res.json({ conversation, classification, model: CLASSIFICATION_MODEL });
     }
@@ -124,6 +125,25 @@ router.patch("/:id/client-action", requireRole("client"), async (req, res) => {
   }
 });
 
+router.post("/:id/analyze", requireRole("assistant"), async (req, res) => {
+  if (!mongoose.isValidObjectId(req.params.id)) return res.status(400).json({ message: "Invalid conversation ID" });
+  try {
+    const conversation = await Conversation.findOne({ _id: req.params.id, assistantId: req.user!._id });
+    if (!conversation) return res.status(404).json({ message: "Conversation not found" });
+    const account = await EmailAccount.findOne({ _id: conversation.accountId, assistantId: req.user!._id });
+    if (!account) return res.status(404).json({ message: "Email account not found" });
+    const analysis = await classifyConversation({ subject: conversation.subject, accountEmail: account.email,
+      messages: conversation.messages });
+    conversation.set({ summary: analysis.summary, keyPoints: analysis.keyPoints, dates: analysis.dates,
+      followUp: analysis.followUp, classificationModel: CLASSIFICATION_MODEL,
+      classifiedAt: new Date() });
+    await conversation.save();
+    res.json({ conversation });
+  } catch (error) {
+    res.status(503).json({ message: error instanceof Error ? error.message : "Could not analyze this thread." });
+  }
+});
+
 router.patch("/:id", requireRole("assistant"), async (req, res) => {
   try {
     if (!mongoose.isValidObjectId(req.params.id)) {
@@ -153,11 +173,18 @@ router.patch("/:id", requireRole("assistant"), async (req, res) => {
     }
     if (typeof body.isImportant === "boolean") changes.isImportant = body.isImportant;
     if (typeof body.isUnread === "boolean") changes.isUnread = body.isUnread;
+    if (typeof body.followUpResolved === "boolean") changes.followUpResolved = body.followUpResolved;
     if (body.draftReply !== undefined) {
       if (typeof body.draftReply !== "string" || body.draftReply.length > 5000) {
         return res.status(400).json({ message: "Reply draft must be under 5,000 characters" });
       }
       changes.draftReply = body.draftReply;
+      changes.draftApproved = false;
+    }
+    if (body.draftApproved === true) {
+      const existing = await Conversation.findOne({ _id: req.params.id, assistantId: req.user!._id }).select("draftReply");
+      if (!existing?.draftReply?.trim()) return res.status(400).json({ message: "Save a reply draft before approving it" });
+      changes.draftApproved = true;
     }
     if (!Object.keys(changes).length) return res.status(400).json({ message: "No changes provided" });
 

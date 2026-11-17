@@ -60,6 +60,15 @@
 .ob-sync-status { display: flex; align-items: center; gap: 8px; padding: 15px 0 17px; border-top: 1px solid #dfe6dc; font-size: 13px; }
 .ob-sync-status strong { font-size: 14px; font-weight: 600; }.ob-sync-status > span:last-child { margin-left: auto; color: #6d786f; white-space: nowrap; }
 .ob-sync-dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: #75a842; }
+.ob-account-list { margin: -9px 0 22px; }
+.ob-account-list > strong { display: block; font-size: 13px; }
+.ob-account-list > p { margin: 3px 0 9px; color: #68736c; font-size: 12px; line-height: 1.4; }
+.ob-account-list > div { display: grid; gap: 6px; }
+.ob-account-list button { display: flex; align-items: center; gap: 9px; width: 100%; min-width: 0; padding: 9px 11px; border: 1px solid #dce2da; border-radius: 8px; background: #fff; color: #202825; font-size: 12px; text-align: left; }
+.ob-account-list button.active { border-color: #9bbc50; background: #f4f8eb; font-weight: 700; }
+.ob-account-list button img { flex: none; width: 20px; height: 20px; object-fit: contain; }
+.ob-account-list button span { min-width: 0; overflow-wrap: anywhere; }
+.ob-account-list button svg { flex: none; margin-left: auto; }
 .ob-panel-ready .ob-primary { min-height: 52px; font-size: 16px; }
 @media (max-width: 480px) { .ob-connection-top { flex-wrap: wrap; }.ob-connected-pill { margin-left: 56px; }.ob-sync-status { flex-wrap: wrap; }.ob-sync-status > span:last-child { width: 100%; margin-left: 15px; } }
 .ob-loading { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 400px; color: #68736c; font-size: 15px; }.ob-spin { animation: ob-spin 1s linear infinite; }@keyframes ob-spin { to { transform: rotate(360deg); } }

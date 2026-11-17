@@ -3,6 +3,26 @@
 Copy `.env.example` to `.env`, set `JWT_SECRET`, then run `npm install` and `npm run dev`.
 The local MongoDB container should be available at `127.0.0.1:27017`.
 
+## Deploy as one web service
+
+Use Node 22 and a reachable MongoDB database. From the repository root, install
+and build both folders:
+
+```bash
+npm ci --prefix frontend
+npm run build --prefix frontend
+npm ci --prefix backend
+npm run build --prefix backend
+npm start --prefix backend
+```
+
+Set `MONGO_URI`, `JWT_SECRET`, and `GROQ_API_KEY` as hosting environment variables;
+the production start command does not need a `.env` file. Set `PORT` if your host
+requires one. The backend serves `frontend/dist` and `/api` on the same origin, so
+direct links to `/inbox`, `/signin`, and `/client` work. Include `frontend/dist` in
+the running service's files. If MongoDB is unavailable, the unsigned sample inbox
+still opens, but account saving and client sessions will not work.
+
 ## Demo data
 
 Create an assistant with `POST /api/auth/signup`, then create a client with
@@ -33,9 +53,11 @@ The default model is `openai/gpt-oss-120b`. The key stays on the backend.
 - `PATCH /api/conversations/:id` — assistant can change responsibility, category, status, important, or unread
 - `PATCH /api/conversations/:id/client-action` — client only; mark their assigned matter handled or ask the assistant to take over
 - `POST /api/conversations/simulate` — assistant only; classify and save a new sample conversation or a reply to an existing one
+- `POST /api/conversations/:id/analyze` — assistant only; refresh saved thread insights
 - `POST /api/demo/classify` — rate-limited, stateless classifier for the unsigned preview; classifies supplied sample thread data without saving it
+- `POST /api/demo/assist` — rate-limited inbox questions and reply suggestions for the demo
 
 Segments: `all`, `open`, `done`, `assistant`, `client`, `no-reply`, `review`, `action-required`,
 `waiting`, `meetings`, `important`, `general`. Clients only see their open
 `client` conversations. All routes above require a bearer token except
-`POST /api/demo/classify`, which supports the unsigned sample preview.
+the two `/api/demo` routes, which support the unsigned sample preview.

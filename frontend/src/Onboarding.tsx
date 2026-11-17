@@ -38,6 +38,7 @@ export default function Onboarding({ intent = "onboarding" }: { intent?: "signin
   const [clientEmail, setClientEmail] = useState(() => sessionStorage.getItem("relay-client-email") || "");
   const [provider, setProvider] = useState<Provider>(() => sessionStorage.getItem("relay-provider") === "outlook" ? "outlook" : "gmail");
   const [accounts, setAccounts] = useState<Account[]>([]);
+  const [activeAccountId, setActiveAccountId] = useState(() => localStorage.getItem("relay-onboarding-account") || "");
   const [status, setStatus] = useState<AccountStatus | null>(null);
   const [busy, setBusy] = useState(false);
   const [checking, setChecking] = useState(!!storedSession());
@@ -62,6 +63,7 @@ export default function Onboarding({ intent = "onboarding" }: { intent?: "signin
       if (next.length) {
         const preferredId = localStorage.getItem("relay-onboarding-account");
         const latest = next.find(account => account._id === preferredId) || next[0];
+        setActiveAccountId(latest._id);
         setProvider(latest.provider);
         setClientEmail(latest.email);
         setStatus(await api<AccountStatus>(`/accounts/${latest._id}/status`, session.token));
@@ -126,6 +128,7 @@ export default function Onboarding({ intent = "onboarding" }: { intent?: "signin
       if (session && !previewOnly) {
         const { account } = await api<{ account: Account }>("/accounts/demo-setup", session.token, { method: "POST", body: JSON.stringify({ clientName: clientName.trim(), provider, email: clientEmail.trim() }) });
         localStorage.setItem("relay-onboarding-account", account._id);
+        setActiveAccountId(account._id);
         const [{ accounts: next }, connectionStatus] = await Promise.all([
           api<{ accounts: Account[] }>("/accounts", session.token),
           api<AccountStatus>(`/accounts/${account._id}/status`, session.token),
@@ -146,6 +149,20 @@ export default function Onboarding({ intent = "onboarding" }: { intent?: "signin
   const currentEmail = session ? clientEmail : demo?.email || clientEmail;
   const currentProvider = session ? provider : demo?.provider || provider;
   const connected = step === "ready" && (demo || accounts.length > 0);
+
+  async function selectDemoAccount(account: Account) {
+    if (!session || busy || account._id === activeAccountId) return;
+    setBusy(true); setError("");
+    try {
+      const nextStatus = await api<AccountStatus>(`/accounts/${account._id}/status`, session.token);
+      setActiveAccountId(account._id);
+      setClientEmail(account.email);
+      setProvider(account.provider);
+      setStatus(nextStatus);
+      localStorage.setItem("relay-onboarding-account", account._id);
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Could not load that demo account."); }
+    finally { setBusy(false); }
+  }
 
   return <div className="ob-page">
     <header className="ob-header"><a href="/" className="ob-brand"><span><ArrowUpRight size={23} /></span>relay</a>
@@ -201,6 +218,7 @@ export default function Onboarding({ intent = "onboarding" }: { intent?: "signin
             <div className="ob-connection-top"><div className="ob-connection-icon"><Mail size={21} /></div><div className="ob-connection-identity"><strong>{providerName(currentProvider)}</strong><span>{currentEmail}</span></div><span className="ob-connected-pill"><CheckCircle2 size={15} /> {status?.status === "error" ? "Needs attention" : "Demo connected"}</span></div>
             <div className="ob-sync-status"><span className="ob-sync-dot" /><strong>{status?.syncStatus === "demo" || demo ? "Sample conversations ready" : status?.syncStatus || "Demo data ready"}</strong><span>No live sync</span></div>
           </div>}
+          {session && accounts.length > 1 && <div className="ob-account-list"><strong>Demo email accounts</strong><p>Switch the address shown above. All sample conversations remain in the inbox.</p><div>{accounts.map(account => <button key={account._id} type="button" className={account._id === activeAccountId ? "active" : ""} onClick={() => selectDemoAccount(account)} disabled={busy} aria-pressed={account._id === activeAccountId}><img src={`/provider-logos/${account.provider}.svg`} alt="" /><span>{account.email}</span>{account._id === activeAccountId && <Check size={16} aria-hidden="true" />}</button>)}</div></div>}
           {error && <p className="ob-error" role="alert"><AlertCircle size={16} /> {error}</p>}
           <a className="ob-primary ob-link-primary" href="/inbox">Open inbox <Inbox size={18} /></a>
           <button className="ob-text-button" onClick={() => { setStep("connect"); setError(""); }}>Set up another demo address</button>

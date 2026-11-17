@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import { existsSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import authRoutes from "./routes/authRoutes.js";
 import roleRoutes from "./routes/roleRoutes.js";
 import accountRoutes from "./routes/accountRoutes.js";
@@ -15,6 +18,16 @@ app.use("/api", roleRoutes);
 app.use("/api/accounts", accountRoutes);
 app.use("/api/conversations", conversationRoutes);
 app.use("/api/demo", demoRoutes);
+
+// In production, serve the built React app from the same origin as the API.
+const frontendDist = resolve(dirname(fileURLToPath(import.meta.url)), "../../frontend/dist");
+if (existsSync(resolve(frontendDist, "index.html"))) {
+  app.use(express.static(frontendDist));
+  app.use((req, res, next) => {
+    if ((req.method !== "GET" && req.method !== "HEAD") || req.path.startsWith("/api")) return next();
+    res.sendFile(resolve(frontendDist, "index.html"));
+  });
+}
 
 const port = process.env.PORT || 5000;
 if (!process.env.MONGO_URI || !process.env.JWT_SECRET) {
