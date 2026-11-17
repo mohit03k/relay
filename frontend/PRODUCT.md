@@ -12,7 +12,7 @@ React and TypeScript with Vite in `/frontend`, calling the existing Node, Expres
 
 ## Users
 
-Personal assistants manage email conversations for one or more clients. They need to find work that needs attention, see who should reply, review a thread, correct an assignment, and mark work done. Clients are a secondary audience and should eventually see only conversations that require their personal response.
+Personal assistants manage email conversations for one or more clients. They need to find work that needs attention, see who should reply, review a thread, correct an assignment, and mark work done. Clients see only conversations that require their personal response in a separate, simplified screen.
 
 ## Product Purpose
 
@@ -25,8 +25,8 @@ Assistants work across client email accounts and conversation lists. They filter
 ## Capabilities and Constraints
 
 - Reply responsibility has four states: assistant, client, no reply, and needs review. Assistants can override an assignment.
-- The existing API supports assistant and client accounts, Gmail and Outlook demo account records, conversation search and segments, conversation detail, and assistant updates to responsibility, status, importance, and unread state.
-- Gmail and Outlook connections, synchronization, and AI results are simulated in this prototype. Live integrations are a future goal, not a current capability.
+- The existing API supports assistant and client accounts, Gmail and Outlook demo account records, conversation search and segments, conversation detail, assistant updates to responsibility, status, importance, and unread state, and client actions to mark handled or request assistant takeover.
+- Gmail and Outlook connections and synchronization are simulated. Seeded AI labels are sample data; the simulated incoming email flow uses Groq for live classification when configured.
 - The app must work on mobile and be keyboard accessible.
 - No hosting target has been chosen.
 

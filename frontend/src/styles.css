@@ -914,7 +914,7 @@ select:disabled {
 
 .ai-insights {
   margin-top: 10px;
-  padding: 11px 12px;
+  padding: 12px 13px;
   border: 1px solid var(--line);
   border-radius: 7px;
   background: #fff
@@ -929,7 +929,9 @@ select:disabled {
 
 .ai-insights h3 {
   margin: 0;
-  font-size: 13px
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -.01em
 }
 
 .ai-insights button,
@@ -947,8 +949,8 @@ select:disabled {
 .ai-insights ul {
   margin: 9px 0 0;
   padding-left: 18px;
-  font-size: 12px;
-  line-height: 1.4
+  font-size: 12.5px;
+  line-height: 1.48
 }
 
 .ai-insights li + li {
@@ -958,7 +960,7 @@ select:disabled {
 .ai-insights-empty {
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 11px
+  font-size: 12px
 }
 
 .ai-dates,
@@ -966,20 +968,23 @@ select:disabled {
   margin-top: 10px;
   padding-top: 9px;
   border-top: 1px solid var(--line);
-  font-size: 11px
+  font-size: 12px
 }
 
 .ai-dates strong,
 .ai-follow-up strong {
   display: block;
   margin-bottom: 5px;
-  font-size: 12px
+  color: #4e5970;
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase
 }
 
 .ai-dates p,
 .ai-follow-up p {
   margin: 4px 0;
-  line-height: 1.35
+  line-height: 1.45
 }
 
 .ai-dates p {
