@@ -1,6 +1,9 @@
 import { Router } from "express";
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+import { randomBytes, randomUUID } from "node:crypto";
 import EmailAccount from "../models/EmailAccount.js";
+import Conversation from "../models/Conversation.js";
 import User from "../models/User.js";
 import { requireAuth, requireRole } from "../middleware/auth.js";
 import { seedDemoInbox } from "../services/demoSeed.js";
@@ -17,6 +20,36 @@ router.get("/", async (req, res) => {
     res.json({ accounts });
   } catch {
     res.status(500).json({ message: "Could not load accounts" });
+  }
+});
+
+// A single setup step for onboarding. The address is a label for sample data;
+// no provider authorization or live mailbox access takes place.
+router.post("/demo-setup", requireRole("assistant"), async (req, res) => {
+  try {
+    const { provider, email, clientName } = req.body;
+    if (!["gmail", "outlook"].includes(provider) || typeof email !== "string"
+      || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+      || typeof clientName !== "string" || !clientName.trim()) {
+      return res.status(400).json({ message: "Provider, email address and client name are required" });
+    }
+    const cleanEmail = email.trim().toLowerCase();
+    let account = await EmailAccount.findOne({ assistantId: req.user!._id, provider, email: cleanEmail });
+    if (!account) {
+      const client = await User.create({
+        name: clientName.trim(),
+        email: `relay-demo-${randomUUID()}@example.test`,
+        password: await bcrypt.hash(randomBytes(32).toString("hex"), 10),
+        role: "client",
+        assistantId: req.user!._id,
+      });
+      account = await EmailAccount.create({ assistantId: req.user!._id, clientId: client._id, provider, email: cleanEmail });
+    }
+    const hasSamples = await Conversation.exists({ assistantId: req.user!._id, clientId: account.clientId });
+    const sample = hasSamples ? null : await seedDemoInbox(req.user!._id, account.clientId, account._id);
+    res.status(201).json({ account, sample, message: "Demo connection ready. No live email was authorized or synced." });
+  } catch {
+    res.status(500).json({ message: "Could not set up the demo account" });
   }
 });
 
