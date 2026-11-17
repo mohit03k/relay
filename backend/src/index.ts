@@ -13,6 +13,10 @@ import demoRoutes from "./routes/demoRoutes.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/api/health", (_req, res) => {
+  const connected = mongoose.connection.readyState === 1;
+  res.status(connected ? 200 : 503).json({ api: "ok", database: connected ? "connected" : "disconnected" });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api", roleRoutes);
 app.use("/api/accounts", accountRoutes);

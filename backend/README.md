@@ -41,6 +41,7 @@ The default model is `openai/gpt-oss-120b`. The key stays on the backend.
 
 ## Routes
 
+- `GET /api/health` — reports whether the API can reach MongoDB; returns 200 when connected or 503 when disconnected
 - `POST /api/accounts/connect` — assistant only; body: `clientId`, `provider` (`gmail` or `outlook`), `email`
 - `POST /api/accounts/demo-setup` — assistant only; body: `clientName`, `provider`, `email`. Creates a simulated connection and loads sample conversations without OAuth or live sync.
 - `PATCH /api/auth/me` — update the signed-in user's name and email address
@@ -60,4 +61,4 @@ The default model is `openai/gpt-oss-120b`. The key stays on the backend.
 Segments: `all`, `open`, `done`, `assistant`, `client`, `no-reply`, `review`, `action-required`,
 `waiting`, `meetings`, `important`, `general`. Clients only see their open
 `client` conversations. All routes above require a bearer token except
-the two `/api/demo` routes, which support the unsigned sample preview.
+`/api/health` and the two `/api/demo` routes, which support the unsigned sample preview.

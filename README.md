@@ -69,3 +69,13 @@ npm run build --prefix backend
 
 The Express server can serve the built `frontend/dist` and the API from one origin. Set `MONGO_URI`, `JWT_SECRET`, and `GROQ_API_KEY` in the hosting environment, and set `PORT` if required by the host. See the [backend deployment notes](backend/README.md#deploy-as-one-web-service) for the full command sequence.
 
+### Separate Render backend and Vercel frontend
+
+For Render, create a **Web Service** from this repository with root directory `backend`, build command `npm ci && npm run build`, and start command `npm start`. Set `MONGO_URI`, `JWT_SECRET`, and `GROQ_API_KEY` in the Render service's environment settings. Render supplies `PORT`. In the Render service's **Connect → Outbound** panel, copy its outbound IP ranges and add them to the MongoDB Atlas project IP access list.
+
+After Render deploys, open `https://YOUR-SERVICE.onrender.com/api/health`. A working database connection returns `{"api":"ok","database":"connected"}`. A `503` response with `"database":"disconnected"` means the API started but MongoDB is not connected; check the Render logs, Atlas URI, database user, and Atlas IP access list.
+
+For Vercel, import the same repository with root directory `frontend`, framework **Vite**, build command `npm run build`, and output directory `dist`. Set `VITE_API_URL` to the Render origin, such as `https://YOUR-SERVICE.onrender.com` (no `/api` or trailing slash). Vercel must rebuild after this value changes. [`frontend/vercel.json`](frontend/vercel.json) makes direct links such as `/signup` and `/inbox` load the React app.
+
+Test the deployed `/signup` and `/inbox` routes, then try **Simulate email**. The frontend uses the Render API through `VITE_API_URL`; the MongoDB URI and Groq key belong only on Render.
+

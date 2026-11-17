@@ -6,6 +6,7 @@ import {
 import Landing from "./Landing";
 import Onboarding from "./Onboarding";
 import ClientView from "./ClientView";
+import { apiUrl } from "./apiUrl";
 
 type Responsibility = "assistant" | "client" | "none" | "review";
 type Status = "open" | "handled" | "archived";
@@ -120,13 +121,13 @@ function matchesView(item: Conversation, view: ViewFilter) {
   return item.category === view;
 }
 async function request<T>(path: string, token: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`/api${path}`, { ...init, headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, ...init?.headers } });
+  const response = await fetch(apiUrl(path), { ...init, headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, ...init?.headers } });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(data.message || `Request failed (${response.status})`);
   return data as T;
 }
 async function demoRequest<T>(path: string, body: unknown): Promise<T> {
-  const response = await fetch(`/api/demo/${path}`, { method: "POST", headers: { "Content-Type": "application/json" },
+  const response = await fetch(apiUrl(`/demo/${path}`), { method: "POST", headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body) });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(data.message || `AI request failed (${response.status})`);
@@ -354,7 +355,7 @@ function Dashboard() {
         const message: Message = { from: simulationMode === "reply" ? selected!.senderEmail : simulationEmail.trim(),
           to: account?.email || "alex@example.test", body: simulationBody.trim(), receivedAt: now };
         const messages = simulationMode === "reply" ? [...(selected!.messages || []), message] : [message];
-        const response = await fetch("/api/demo/classify", { method: "POST", headers: { "Content-Type": "application/json" },
+        const response = await fetch(apiUrl("/demo/classify"), { method: "POST", headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ subject: simulationMode === "reply" ? selected!.subject : simulationSubject.trim(), accountEmail: message.to, messages }) });
         const result = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(result.message || `Classification failed (${response.status})`);
@@ -509,7 +510,7 @@ function Dashboard() {
   async function submitAuth(event: FormEvent) {
     event.preventDefault(); setBusy(true); setError("");
     try {
-      const response = await fetch(`/api/auth/${authMode}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: authName, email: authEmail, password: authPassword }) });
+      const response = await fetch(apiUrl(`/auth/${authMode}`), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: authName, email: authEmail, password: authPassword }) });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Could not sign in.");
       setSession(data); setAuthOpen(false); setAuthPassword(""); setNotice("Connected to the local API.");

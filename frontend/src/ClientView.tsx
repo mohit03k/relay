@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Inbox, X } from "lucide-react";
 import "./client.css";
+import { apiUrl } from "./apiUrl";
 
 type Session = { token: string; user: { id: string; name: string; role: "assistant" | "client" } };
 type Message = { from: string; to: string; body: string; receivedAt: string };
@@ -24,7 +25,7 @@ function previewConversations(): ClientConversation[] {
 }
 
 async function api<T>(path: string, token: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`/api${path}`, { ...init, headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, ...init?.headers } });
+  const response = await fetch(apiUrl(path), { ...init, headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, ...init?.headers } });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(data.message || `Request failed (${response.status})`);
   return data as T;

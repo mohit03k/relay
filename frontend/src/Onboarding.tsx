@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { AlertCircle, ArrowLeft, ArrowRight, ArrowUpRight, Check, CheckCircle2, Inbox, LockKeyhole, Mail, RefreshCw } from "lucide-react";
 import "./onboarding.css";
+import { apiUrl } from "./apiUrl";
 
 type Provider = "gmail" | "outlook";
 type User = { id: string; name: string; email: string; role: "assistant" | "client" };
@@ -17,7 +18,7 @@ function storedDemo(): DemoConnection | null {
   try { return JSON.parse(localStorage.getItem("relay-demo-connection") || "null"); } catch { return null; }
 }
 async function api<T>(path: string, token?: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`/api${path}`, { ...init, headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}), ...init?.headers } });
+  const response = await fetch(apiUrl(path), { ...init, headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}), ...init?.headers } });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(data.message || `Request failed (${response.status})`);
   return data as T;
