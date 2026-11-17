@@ -3,6 +3,7 @@ import {
   Bell, Check, CheckCircle2, ChevronDown, Clock3, Flag, Forward,
   Inbox, Menu, Search, Sparkles, UserRound, UsersRound, X,
 } from "lucide-react";
+import Landing from "./Landing";
 
 type Responsibility = "assistant" | "client" | "none" | "review";
 type Status = "open" | "handled";
@@ -90,7 +91,7 @@ async function request<T>(path: string, token: string, init?: RequestInit): Prom
   return data as T;
 }
 
-export default function App() {
+function Dashboard() {
   const [session, setSession] = useState<Session | null>(() => { try { return JSON.parse(localStorage.getItem("relay-session") || "null"); } catch { return null; } });
   const [items, setItems] = useState<Conversation[]>(preview);
   const [accounts, setAccounts] = useState<Account[]>([]);
@@ -104,7 +105,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
-  const [authOpen, setAuthOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(() => window.location.hash === "#signin");
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
   const [authName, setAuthName] = useState("");
   const [authEmail, setAuthEmail] = useState("");
@@ -285,4 +286,14 @@ export default function App() {
 
     {authOpen && <div className="modal-backdrop" onMouseDown={event => { if (event.target === event.currentTarget) setAuthOpen(false); }}><section ref={authDialogRef} className="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title"><button className="dialog-close icon-button" aria-label="Close sign in" onClick={() => setAuthOpen(false)}><X size={20} /></button><h2 id="auth-title">{authMode === "login" ? "Sign in to Relay" : "Create assistant account"}</h2><p>Connect to the local prototype API. The inbox will use your stored demo conversations.</p>{error && <div className="auth-error" role="alert">{error}</div>}<form onSubmit={submitAuth}>{authMode === "signup" && <label>Name<input required value={authName} onChange={event => setAuthName(event.target.value)} autoComplete="name" /></label>}<label>Email<input required type="email" value={authEmail} onChange={event => setAuthEmail(event.target.value)} autoComplete="email" /></label><label>Password<input required minLength={8} type="password" value={authPassword} onChange={event => setAuthPassword(event.target.value)} autoComplete={authMode === "login" ? "current-password" : "new-password"} /></label><button className="primary-button" disabled={busy}>{busy ? "Please wait…" : authMode === "login" ? "Sign in" : "Create account"}</button></form><button className="mode-switch" onClick={() => setAuthMode(authMode === "login" ? "signup" : "login")}>{authMode === "login" ? "New assistant? Create an account" : "Already have an account? Sign in"}</button></section></div>}
   </div>;
+}
+
+export default function App() {
+  const [inboxOpen, setInboxOpen] = useState(() => ["#inbox", "#signin"].includes(window.location.hash));
+  useEffect(() => {
+    const sync = () => setInboxOpen(["#inbox", "#signin"].includes(window.location.hash));
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
+  return inboxOpen ? <Dashboard /> : <Landing />;
 }

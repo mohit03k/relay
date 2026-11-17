@@ -104,7 +104,7 @@ select:disabled {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: 89px;
+  min-height: 80px;
   padding: 0 13px
 }
 
@@ -114,15 +114,15 @@ select:disabled {
 }
 
 .brand {
-  font-size: 35px;
+  font-size: 32px;
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -.035em
 }
 
 .brand-row small {
-  margin-top: 5px;
-  font-size: 14px;
+  margin-top: 4px;
+  font-size: 13px;
   font-weight: 700
 }
 
@@ -132,24 +132,29 @@ select:disabled {
 
 .nav-list {
   display: grid;
-  gap: 3px
+  gap: 2px
 }
 
 .nav-item {
   display: grid;
-  grid-template-columns: 21px minmax(0, 1fr) auto;
+  grid-template-columns: 19px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 12px;
-  min-height: 49px;
+  gap: 10px;
+  min-height: 44px;
   width: 100%;
-  padding: 8px 11px;
+  padding: 7px 10px;
   border: 0;
   border-radius: 6px;
   background: transparent;
   color: #f5f6fb;
   text-align: left;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600
+}
+
+.nav-item svg {
+  width: 18px;
+  height: 18px
 }
 
 .nav-item:hover {
@@ -180,12 +185,12 @@ select:disabled {
 .sidebar-demo {
   display: flex;
   align-items: center;
-  gap: 11px;
-  margin: 24px 9px 0;
-  padding: 18px 1px;
+  gap: 9px;
+  margin: 19px 9px 0;
+  padding: 14px 1px;
   border-top: 1px solid #8090b2;
   color: #e8edfa;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600
 }
 
@@ -197,14 +202,14 @@ select:disabled {
 .sidebar-account {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 9px;
   width: 100%;
-  padding: 10px 5px;
+  padding: 8px 5px;
   border: 0;
   background: transparent;
   color: #eef2fc;
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600
 }
 
